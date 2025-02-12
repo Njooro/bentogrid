@@ -1,15 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+html,
+body{
+    font-family: "Roboto Serif", serif;
+}
 
 .grid-container{
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
 }
+
 
 .create-post{
     font-size: 20px;
@@ -20,6 +25,25 @@
     height: 70px;
 
     
+}
+
+.audience{
+    margin: 20px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.audience h3{
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+.audience p{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.audience img{
+    height: 40%;
+    width: 30%;
 }
 
 .grow-followers{
