@@ -11,15 +11,77 @@ body{
 }
 
 .grid-container{
+    max-width: 1440px;
+    margin: 80px auto;
+    padding: 20px;
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    'a b b c'
+    'a b b c'
+    'd e f c'
+    'd g h h';
+    gap: 15px;
+   
 }
 
+.create-post{grid-area: a;}
+.five-stars{grid-area: b;}
+.social-media-schedule{grid-area: c;}
+.ai-content{grid-area: d;}
+.multiple-platforms{grid-area: e;}
+.consistent-schedule{grid-area: f;}
+.audience{grid-area: g;}
+.grow-followers{grid-area: h;}
+
+.create-post,
+.ai-content {
+    max-width: 250px;
+    
+    justify-content: stretch;
+}
+
+.ai-content img{
+    height: 200px;
+    width: 100%;
+    
+}
+
+.ai-content p{
+    margin-bottom: 30px;
+    line-height: 3rem;
+    font-weight: 700;
+}
+
+.card{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 25px;
+    min-height: 250px;
+    box-shadow: rgba(17, 12, 46, 0.15)0px, 8px, 24px;
+
+}
+
+.card p{
+    font-size: 18px;
+    line-height: 1.5rem;
+}
 
 .create-post{
-    font-size: 20px;
+    
     
     background-color: hsl(31, 66%, 93%);
+}
+
+.create-post p {
+    line-height: 1.8rem;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
 }
 .create-post img{
     height: 70px;
@@ -27,36 +89,86 @@ body{
     
 }
 
-.audience{
-    margin: 20px;
-    padding: 20px;
+.five-stars{
+    background-color: hsl(256, 67%, 59%);
+    color: white;
+}
+
+.social-media-schedule{
+    background-color: hsl(254, 88%, 90%);
+}
+
+.ai-content{
+    background-color: hsl(39, 100%, 71%);
+}
+
+.multiple-platforms{
     background-color: hsl(0, 0%, 100%);
+}
+
+.consistent-schedule{
+    background-color: hsl(39, 100%, 71%);
+}
+
+.audience{
+    
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .audience h3{
     font-size: 64px;
     margin-bottom: 10px;
 }
-.audience p{
-    font-size: 18px;
-    margin-bottom: 10px;
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
 }
-.audience img{
-    height: 40%;
-    width: 30%;
-}
+
 
 .grow-followers{
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    padding: 20px;
+    padding: 30px;
     background-color: hsl(256, 67%, 59%);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .grow-followers img{
     width: 60%;
     height: 60%;
+}
+.emphasis{
+    color: hsl(256, 67%, 59%);
+}
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            'a b'
+            'c d'
+            'e f'
+            'g h';
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'a'
+            'b'
+            'c'
+            'd'
+            'e'
+            'f'
+            'g'
+            'h';
+    }
 }
