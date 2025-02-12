@@ -1,0 +1,38 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container{
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+}
+
+.create-post{
+    font-size: 20px;
+    
+    background-color: hsl(31, 66%, 93%);
+}
+.create-post img{
+    height: 70px;
+
+    
+}
+
+.grow-followers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: hsl(256, 67%, 59%);
+    font-size: 3rem;
+}
+.grow-followers img{
+    width: 60%;
+    height: 60%;
+}
