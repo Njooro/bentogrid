@@ -12,16 +12,18 @@ body{
 
 .grid-container{
     max-width: 1440px;
+    height: 850px;
     margin: 80px auto;
-    padding: 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 270px);
+    grid-template-rows: 330pxx 1fr 1fr;
     grid-template-areas: 
     'a b b c'
     'a b b c'
     'd e f c'
     'd g h h';
-    gap: 15px;
+    gap: 10px;
    
 }
 
@@ -41,16 +43,20 @@ body{
     justify-content: stretch;
 }
 
-.ai-content img{
-    height: 200px;
-    width: 100%;
-    
+.ai-content{
+    height:455px;
+    padding:20px;
+    margin-top:60px;
 }
 
 .ai-content p{
-    margin-bottom: 30px;
-    line-height: 3rem;
+   
     font-weight: 700;
+}
+.ai-content img{
+    width:200px;
+    margin-left:10px;
+    
 }
 
 .card{
@@ -73,7 +79,8 @@ body{
 
 .create-post{
     
-    
+    height:295px;
+    padding:20px;
     background-color: hsl(31, 66%, 93%);
 }
 
