@@ -1,161 +1,232 @@
-@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-*{
+
+/* custom properties for this project */
+:root{
+    /* font family */
+    --ff-sans: "DM Sans", serif;
+    
+    /* font weight */
+    --fw-normal: 400;
+    --fw-bold: 500;
+
+    /* font size */
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600:1.625rem;
+    --fs-900: 2.5rem;
+
+    /* colors */
+    --clr-purple-100: hsl(254, 88%, 90%);
+    --clr-purple-500: hsl(256, 67%, 59%);
+    --clr-yellow-100: hsl(31, 66%, 93%);
+    --clr-yellow-500: hsl(39, 100%, 71%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 7%);
+
+
+}
+
+*,
+::before,
+::after{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
-html,
+
+html{
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-normal);
+    line-height: 1.7;
+    background-color: var(--clr-white);
+
+}
+
 body{
-    font-family: "Roboto Serif", serif;
+    margin: 0;
+}
+h2{
+    line-height: 1.2;
+    color: var(--clr-black);
 }
 
-.grid-container{
-    max-width: 1440px;
-    height: 850px;
-    margin: 80px auto;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 270px);
-    grid-template-rows: 330pxx 1fr 1fr;
-    grid-template-areas: 
-    'a b b c'
-    'a b b c'
-    'd e f c'
-    'd g h h';
-    gap: 10px;
-   
-}
 
-.create-post{grid-area: a;}
-.five-stars{grid-area: b;}
-.social-media-schedule{grid-area: c;}
-.ai-content{grid-area: d;}
-.multiple-platforms{grid-area: e;}
-.consistent-schedule{grid-area: f;}
-.audience{grid-area: g;}
-.grow-followers{grid-area: h;}
 
-.create-post,
-.ai-content {
-    max-width: 250px;
-    
-    justify-content: stretch;
-}
-
-.ai-content{
-    height:455px;
-    padding:20px;
-    margin-top:60px;
-}
-
-.ai-content p{
-   
-    font-weight: 700;
-}
-.ai-content img{
-    width:200px;
-    margin-left:10px;
-    
+img{
+    max-width: 200px;
 }
 
 .card{
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-height: 200px;
+    padding: 2rem;
+    
     border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 25px;
-    min-height: 250px;
-    box-shadow: rgba(17, 12, 46, 0.15)0px, 8px, 24px;
-
+    border: 1px solid black;
 }
 
-.card p{
-    font-size: 18px;
-    line-height: 1.5rem;
-}
-
-.create-post{
+.layout-grid{
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    'a b b  c'
+    'a b b c'
+    'd f e c'
+    'd g h h';
     
-    height:295px;
-    padding:20px;
-    background-color: hsl(31, 66%, 93%);
+    gap: 10px;
 }
 
-.create-post p {
-    line-height: 1.8rem;
-    margin-bottom: 30px;
-    font-size: 18px;
-    font-weight: 400;
-}
-.create-post img{
-    height: 70px;
+/* grid areas assignment */
 
-    
+.schedule__content{
+    grid-area: a;
+}
+.five__star{
+    grid-area: b;
 }
 
-.five-stars{
-    background-color: hsl(256, 67%, 59%);
-    color: white;
+.social__media{
+    grid-area: c;
 }
 
-.social-media-schedule{
-    background-color: hsl(254, 88%, 90%);
+.ai__content{
+    grid-area: d;
+}
+.multiple__accounts{
+    grid-area: f;
+}
+.posting__schedule{
+    grid-area: e;
 }
 
-.ai-content{
-    background-color: hsl(39, 100%, 71%);
+.audience__card{
+    grid-area: g;
 }
 
-.multiple-platforms{
-    background-color: hsl(0, 0%, 100%);
+.grow__followers{
+    grid-area: h;
 }
 
-.consistent-schedule{
-    background-color: hsl(39, 100%, 71%);
-}
-
-.audience{
-    
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.audience h3{
-    font-size: 64px;
-    margin-bottom: 10px;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-}
-
-
-.grow-followers{
-    display: flex;
-    flex-direction: row ;
+/* first card styling */
+.five__star{
+    background-color: var(--clr-purple-500);
+    color: var(--clr-white);
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    background-color: hsl(256, 67%, 59%);
-    font-size: 2rem;
+    margin: 0;
+    
 }
-.grow-followers img{
-    width: 60%;
-    height: 60%;
+
+.five__star h2{
+    color: var(--clr-white);
+    font-size: 36px;
+
 }
-.emphasis{
-    color: hsl(256, 67%, 59%);
+
+.five__star p{
+    font-size: small;
 }
+.card--big{
+    color: var(--clr-yellow-500);
+}
+
+/* second card styling */
+.multiple__accounts{
+    background-color: var(--clr-white);
+   
+    font-weight: var(--fw-bold);
+    
+    overflow: hidden;
+    
+
+}
+.multiple__accounts p{
+    font-size: 1.2rem;
+}
+.multiple__accounts img{
+    margin-bottom: 30px;
+}
+
+/* third card styling */
+.posting__schedule{
+    background-color: var(--clr-yellow-500);
+    
+    
+    font-weight: var(--fw-bold);
+    overflow: hidden;
+}
+
+.posting__schedule img{
+    max-width: 120px;
+    
+}
+/* fourth card stylying */
+.social__media{
+    background-color: var(--clr-purple-100);
+   
+    font-weight: var(--fw-bold);
+    overflow: hidden;
+}
+
+.social__media p{
+    font-size: 0.8rem;
+}
+
+/* fifth card styling */
+.grow__followers{
+    background-color: var(--clr-purple-500);
+    color: var(--clr-white);
+    font-weight: var(--fw-bold);
+    display: flex;
+    
+    
+}
+
+.grow__followers p{
+    font-size: 1.2rem;
+}
+
+.grow__followers img{
+    max-width: 150px;
+}
+/* sixth card styling */
+.audience__card{
+    background-color: var(--clr-white);
+   
+   
+}
+
+.audience__card p{
+    font-size: .8rem;
+}
+
+.audience__card img{
+    max-width: 150px;
+}
+
+/* seventh card styling */
+.schedule__content{
+    background-color: var(--clr-yellow-100);
+    
+}
+
+.schedule__content img{
+    max-width: 120px;
+}
+
+/* eighth card styling */
+.ai__content{
+    background-color: var(--clr-yellow-500);
+    
+}
+
+.ai__content img{
+    max-width: 250px;
+    height: 250px;
+    margin-top: 120px;
+}
+
 @media (max-width: 1024px) {
-    .grid-container {
+    .layout-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
             'a b'
@@ -166,7 +237,7 @@ body{
 }
 
 @media (max-width: 768px) {
-    .grid-container {
+    .layout-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
             'a'
@@ -179,3 +250,10 @@ body{
             'h';
     }
 }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+
